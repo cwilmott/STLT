@@ -30,7 +30,6 @@
 var map = new mapboxgl.Map({
   container: 'map', // container id
   style: 'mapbox://styles/mapbox/satellite-v9', // stylesheet location
-  center: [-122.25, 37.87], // starting position
   zoom: 12 // starting zoom
 });
 var geolocate = new mapboxgl.GeolocateControl({
@@ -45,7 +44,7 @@ map.on('load', function() {
   geolocate.trigger();
   map.addSource('areas', {
         type: 'geojson',
-        data: 'https://docs.mapbox.com/mapbox-gl-js/assets/ne_110m_admin_1_states_provinces_shp.geojson'
+        data: ''
       });
     map.addLayer({
   id: 'areas-layer',
