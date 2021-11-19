@@ -44,7 +44,7 @@ map.on('load', function() {
   geolocate.trigger();
   map.addSource('areas', {
         type: 'geojson',
-        data: ''
+        data: 'https://raw.githubusercontent.com/cwilmott/STLT/main/features.geojson'
       });
     map.addLayer({
   id: 'areas-layer',
