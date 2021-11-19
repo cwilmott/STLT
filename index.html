@@ -50,7 +50,8 @@ map.on('load', function() {
   id: 'areas-layer',
   type: 'fill',
   source: 'areas',
-  paint: {'fill-outline-color': 'rgba(200, 100, 240, 1)' }
+  paint: {'fill-color': 'rgba(200, 100, 240, 0.0)',
+  'fill-outline-color': 'rgba(200, 100, 240, 1)' }
 });
 map.on('click', 'areas-layer', (e) => {
 // setting up some constants below.
