@@ -46,12 +46,34 @@ map.on('load', function() {
         type: 'geojson',
         data: 'https://raw.githubusercontent.com/cwilmott/STLT/main/features.geojson'
       });
+  map.addSource('path_30ft', {
+            type: 'geojson',
+            data: 'https://raw.githubusercontent.com/cwilmott/STLT/main/Path_Road_Buffer.geojson'
+          });
+  map.addSource('outlook_30ft', {
+                    type: 'geojson',
+                    data: 'https://raw.githubusercontent.com/cwilmott/STLT/main/Outlook_Buffer.geojson'
+                  });
     map.addLayer({
   id: 'areas-layer',
   type: 'line',
   source: 'areas',
   paint: {'line-color': 'rgba(255, 255, 0, 1)',
       'line-width': 4 }
+});
+map.addLayer({
+id: 'path_30ft',
+type: 'line',
+source: 'path_30ft',
+paint: {'line-color': 'rgba(255, 20, 147, 1)',
+  'line-width': 3 }
+});
+map.addLayer({
+id: 'outlook_30ft',
+type: 'line',
+source: 'outlook_30ft',
+paint: {'line-color': 'rgba(255, 20, 147, 1)',
+  'line-width': 2 }
 });
 map.on('click', 'areas-layer', (e) => {
 // setting up some constants below.
